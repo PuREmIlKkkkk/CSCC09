@@ -1,14 +1,14 @@
 import { getItems, addItem, deleteItem } from "/js/api.mjs";
 
 function onError(err) {
-  console.error("[error]", err);
+  console.error(err);
   const error_box = document.querySelector("#error_box");
-  error_box.innerHTML = err;
+  error_box.innerHTML = err.message;
   error_box.style.visibility = "visible";
 }
 
 function update() {
-  getItems(function (items) {
+  getItems(onError, function (items) {
     document.querySelector("#items").innerHTML = "";
     items.forEach(function (item) {
       const element = document.createElement("div");
@@ -20,23 +20,18 @@ function update() {
       element
         .querySelector(".delete-icon")
         .addEventListener("click", function (e) {
-          deleteItem(item.id, function () {
-            update();
-          }, onError);
+          deleteItem(item.id, onError, update);
         });
       document.querySelector("#items").prepend(element);
     });
-  }, 
-  onError);
+  });
 }
 
 document.querySelector("#add_item").addEventListener("submit", function (e) {
   e.preventDefault();
   const content = document.querySelector("#content_form").value;
   document.querySelector("#add_item").reset();
-  addItem(content, function () {
-    update();
-  }, onError);
+  addItem(content, onError, update);
 });
 
 (function refresh() {
