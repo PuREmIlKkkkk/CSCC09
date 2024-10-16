@@ -25,21 +25,16 @@
   hw: 
       title: Backend
       handout: https://classroom.github.com/a/Cs2VQ_dn
-  
-# - week: <span class="em">Reading Week</span>
-#   project:
-#       title: Proposal
-#       # handout: ../project/
     
 - week: 
   lab: 
       title: Managing Users
-      # handout: https://classroom.github.com/a/vDpol6gU
+      handout: https://classroom.github.com/a/S7GhF22X
     
 - week: 
   lab: 
       title: Security
-      # handout: https://classroom.github.com/a/ksxamsty
+      handout: https://classroom.github.com/a/T_U0wrhA
   hw: 
       title: Managing Users
       handout: https://classroom.github.com/a/Ry5gAz_R
@@ -50,7 +45,7 @@
       # handout: https://classroom.github.com/a/UfG_H5_z
   project:
       title: Proposal
-      # handout: ../project/
+      handout: ../project/
 
 
 - break: <span class="em">Reading Week</span>
